@@ -1,4 +1,4 @@
-/* style.css — external stylesheet for The Towel Atelier (placeholder version) */
+/* style.css — external stylesheet for The Towel Atelier */
 
 :root {
   --bg: #fff9ef;
@@ -17,52 +17,110 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font: 16px/1.55 'Cormorant Garamond', serif;
+  font: 16px/1.55 'Cormorant Garamond', 'Garamond', 'Georgia', ui-serif, serif;
   letter-spacing: 0.2px;
 }
 
 h1, h2, h3, .logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cormorant Garamond', 'Garamond', 'Georgia', ui-serif, serif;
   letter-spacing: 0.4px;
   color: var(--ink);
 }
 
+.container { max-width: 1120px; margin-inline: auto; padding: 0 20px; }
+
 header {
   position: static;
-  background: var(--bg);
-  border-bottom: none;
-  padding: 20px 0;
+  top: auto;
+  z-index: 1;
+  backdrop-filter: none;
+  background: var(--bg); /* #fff9ef */
+  border-bottom: none;   /* <- remove the line entirely */
 }
 
-.nav, .brand, .logo-img, nav a, .hero, .section, .card, .story, .newsletter, footer {
-  color: var(--ink);
-}
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+.logo { font-size: 22px; font-weight: 600; font-family: 'Cormorant Garamond', serif; }
+.logo-img { width: 56px; height: 56px; border-radius: 14px; object-fit: cover; display: block; }
+nav a { color: var(--ink); text-decoration: none; margin-left: 18px; opacity: .8; font-family: 'Cormorant Garamond', serif; font-size: 18px; }
+nav a:hover { opacity: 1; text-decoration: none; }
 
-/* Placeholder text */
-.hero h1, .lead, .section h2, .section .sub, p, .meta, .card-title h3, .price, label, .btn, .logo {
-  color: var(--ink);
-  text-decoration: none;
+.hero { padding: 80px 0 64px; position: relative; }
+.hero::after {
+  content: ''; position: absolute; inset: auto 0 -40px 0; height: 80px;
+  background: radial-gradient(60% 40px at 50% 0, rgba(0, 0, 0, .08), transparent 70%);
+  pointer-events: none;
 }
-
-/* Basic layout placeholders */
-.container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
-.hero { padding: 80px 0 64px; }
+.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
+@media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; gap: 28px; } }
+.hero h1 { font-size: clamp(32px, 4vw, 54px); line-height: 1.04; margin: 0 0 12px; color: var(--ink); font-family: 'Cormorant Garamond', serif; }
+.lead { color: var(--ink); font-size: 20px; max-width: 48ch; font-family: 'Cormorant Garamond', serif; }
+.cta { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
 .btn {
-  border: 1px solid var(--ink);
-  background: var(--ink);
-  color: #fff;
-  border-radius: 999px;
-  padding: 12px 18px;
-  text-decoration: none;
-  font-family: 'Cormorant Garamond', serif;
+  appearance: none; border: 1px solid var(--ink); background: var(--ink); color: #fff;
+  padding: 12px 18px; border-radius: 999px; cursor: pointer; transition: .2s transform, .2s box-shadow, .2s opacity;
+  font-weight: 600; text-decoration: none; font-family: 'Cormorant Garamond', serif; letter-spacing: 0.5px;
 }
-.btn:hover { opacity: 0.9; }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 10px 18px rgba(0, 0, 0, .08); text-decoration: none; }
+.btn.outline { background: transparent; color: var(--ink); border-color: var(--line); text-decoration: none; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: transparent; opacity: .8; text-decoration: none; }
 
-/* Placeholder page structure */
-nav a { text-decoration: none; margin-left: 18px; font-family: 'Cormorant Garamond', serif; font-size: 18px; }
-nav a:hover { opacity: 0.8; }
+.hero-media { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid var(--line); background: var(--paper); }
+.hero-media::before {
+  content: ''; display: block; aspect-ratio: 4/3; background:
+  linear-gradient(180deg, rgba(0, 0, 0, .04), rgba(0, 0, 0, .02)),
+  repeating-linear-gradient(90deg, #f3efe7 0 22px, #efe9df 22px 44px);
+}
+.media-tag { position: absolute; bottom: 14px; left: 14px; background: rgba(255, 255, 255, .88); border: 1px solid var(--line); padding: 8px 12px; border-radius: 999px; font-size: 12px; color: var(--ink); }
 
-/* Footer */
-footer { padding: 28px 0 60px; color: var(--ink); font-family: 'Cormorant Garamond', serif; }
+.section { padding: 56px 0; }
+.section h2 { font-size: 30px; margin: 0 0 6px; color: var(--ink); font-family: 'Cormorant Garamond', serif; }
+.section .sub { color: var(--ink); margin: 0 0 22px; font-family: 'Cormorant Garamond', serif; }
+
+.grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+.card { grid-column: span 4; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; transition: .2s transform, .2s box-shadow; color: var(--ink); font-family: 'Cormorant Garamond', serif; }
+@media (max-width: 980px) { .card { grid-column: span 6; } }
+@media (max-width: 640px) { .card { grid-column: span 12; } }
+.card:hover { transform: translateY(-2px); box-shadow: 0 14px 24px rgba(0, 0, 0, .08); }
+.photo { position: relative; background:
+  linear-gradient(180deg, rgba(0, 0, 0, .03), rgba(0, 0, 0, .01)),
+  repeating-linear-gradient(90deg, #f4f0ea 0 20px, #efeae3 20px 40px);
+  border-bottom: 1px solid var(--line); aspect-ratio: 4/3; }
+.badge { position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, .88); border: 1px solid var(--line); border-radius: 999px; padding: 6px 10px; font-size: 12px; color: var(--ink); }
+.card-body { padding: 14px 14px 16px; color: var(--ink); }
+.card-title { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.card-title h3 { font-size: 18px; margin: 0; color: var(--ink); }
+.price { font-weight: 700; color: var(--ink); }
+.meta { color: var(--ink); font-size: 13px; margin: 6px 0 10px; }
+.swatches { display: flex; gap: 8px; align-items: center; }
+.dot { width: 16px; height: 16px; border-radius: 50%; border: 1px solid rgba(0, 0, 0, .08); }
+.dot.cream { background: #efe9df; }
+.dot.sand { background: #d7c8b3; }
+.dot.taupe { background: #b7a797; }
+.dot.charcoal { background: #3b3835; }
+.card-actions { display: flex; gap: 8px; margin-top: 12px; }
+.btn.small { padding: 10px 14px; font-weight: 600; }
+
+.story { display: grid; grid-template-columns: .9fr 1.1fr; gap: 30px; align-items: center; }
+@media (max-width: 860px) { .story { grid-template-columns: 1fr; } }
+.paper { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 18px; color: var(--ink); }
+.story-visual { border: 1px solid var(--line); border-radius: 18px; background: repeating-linear-gradient(90deg, #f1ece5 0 28px, #ece5dc 28px 56px); aspect-ratio: 16/12; }
+
+.newsletter { display: flex; gap: 10px; flex-wrap: wrap; }
+.input { appearance: none; border: 1px solid var(--line); background: #fff; padding: 12px 14px; border-radius: 999px; min-width: 260px; color: var(--ink); font-family: 'Cormorant Garamond', serif; }
+
+form label { display: block; font-weight: 600; margin: 12px 0 6px; color: var(--ink); font-family: 'Cormorant Garamond', serif; }
+input[type='text'], input[type='email'], textarea {
+  width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); background: #fff; color: var(--ink); font-family: 'Cormorant Garamond', serif;
+}
+textarea { min-height: 120px; resize: vertical; }
+
+footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 28px 0 60px; color: var(--ink); font-family: 'Cormorant Garamond', serif; }
 .foot { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; }
 .links a { margin-right: 16px; color: var(--ink); text-decoration: none; font-family: 'Cormorant Garamond', serif; }
+
+.toast {
+  position: fixed; left: 50%; transform: translateX(-50%); bottom: 24px; background: var(--ink); color: #fff;
+  padding: 10px 14px; border-radius: 999px; font-size: 14px; opacity: 0; pointer-events: none; transition: opacity .24s, transform .24s;
+}
+.toast.show { opacity: 1; transform: translate(-50%, -4px); }
