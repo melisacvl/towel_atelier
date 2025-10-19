@@ -16,6 +16,7 @@
       --line: #e9e4dc;
       --ok: #2a7f62;
     }
+  
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -69,6 +70,14 @@
     .section{padding:56px 0}
     .section h2{font-size:30px; margin:0 0 6px}
     .section .sub{color:var(--subtle); margin:0 0 22px}
+    
+    .logo-img{
+      width:36px;
+      height:36px;
+      border-radius:12px;      /* keep the chic rounded-corner look */
+      object-fit:cover;
+      display:block;
+    }
 
     /* Products */
     .grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:18px}
