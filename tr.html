@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Towel Atelier</title>
+  <meta name="description" content="XXXXX">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <img src="assets/logo.png" alt="The Towel Atelier logo" class="logo-img">
+        <span class="logo">The Towel Atelier</span>
+      </a>
+      <nav>
+        <a href="#collection">XXXXX</a>
+        <a href="#story">Hikayemiz</a>
+        <a href="#contact">XXXXX</a>
+        <a class="btn ghost" href="#newsletter">XXXXX</a>
+        <a href="index.html">EN</a>
+        <a href="tr.html">TR</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- Hero -->
+    <section class="hero container">
+      <div class="hero-grid">
+        <div>
+          <h1>XXXXX</h1>
+          <p class="lead">XXXXX</p>
+          <div class="cta">
+            <a href="#collection" class="btn">XXXXX</a>
+            <a href="#story" class="btn outline">XXXXX</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <span class="media-tag">XXXXX</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collection -->
+    <section id="collection" class="section container">
+      <h2>XXXXX</h2>
+      <p class="sub">XXXXX</p>
+      <div class="grid">
+        <article class="card">
+          <div class="photo">
+            <span class="badge">XXXXX</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title"><h3>XXXXX</h3> <span class="price">XXXXX</span></div>
+            <p class="meta">XXXXX</p>
+            <div class="swatches">
+              <span class="dot cream"></span>
+              <span class="dot sand"></span>
+              <span class="dot taupe"></span>
+              <span class="dot charcoal"></span>
+            </div>
+            <div class="card-actions">
+              <button class="btn small">XXXXX</button>
+              <button class="btn small outline">XXXXX</button>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="photo"></div>
+          <div class="card-body">
+            <div class="card-title"><h3>XXXXX</h3> <span class="price">XXXXX</span></div>
+            <p class="meta">XXXXX</p>
+            <div class="swatches">
+              <span class="dot cream"></span>
+              <span class="dot sand"></span>
+              <span class="dot taupe"></span>
+            </div>
+            <div class="card-actions">
+              <button class="btn small">XXXXX</button>
+              <button class="btn small outline">XXXXX</button>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="photo"></div>
+          <div class="card-body">
+            <div class="card-title"><h3>XXXXX</h3> <span class="price">XXXXX</span></div>
+            <p class="meta">XXXXX</p>
+            <div class="swatches">
+              <span class="dot cream"></span>
+              <span class="dot sand"></span>
+              <span class="dot charcoal"></span>
+            </div>
+            <div class="card-actions">
+              <button class="btn small">XXXXX</button>
+              <button class="btn small outline">XXXXX</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section id="story" class="section container">
+      <div class="story">
+        <div class="paper">
+          <h2>XXXXX</h2>
+          <p>XXXXX</p>
+          <p>XXXXX</p>
+        </div>
+        <div class="story-visual"></div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section id="newsletter" class="section container">
+      <h2>XXXXX</h2>
+      <p class="sub">XXXXX</p>
+      <div class="newsletter">
+        <input class="input" type="email" placeholder="XXXXX" />
+        <button class="btn">XXXXX</button>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section container">
+      <h2>XXXXX</h2>
+      <p class="sub">XXXXX</p>
+      <div class="grid">
+        <div class="paper" style="grid-column:span 7">
+          <form onsubmit="event.preventDefault(); alert('XXXXX');">
+            <label for="name">XXXXX</label>
+            <input id="name" type="text" placeholder="XXXXX">
+            <label for="email">XXXXX</label>
+            <input id="email" type="email" placeholder="XXXXX">
+            <label for="msg">XXXXX</label>
+            <textarea id="msg" placeholder="XXXXX"></textarea>
+            <div style="margin-top:14px">
+              <button class="btn">XXXXX</button>
+            </div>
+          </form>
+        </div>
+        <div class="paper" style="grid-column:span 5">
+          <h3>XXXXX</h3>
+          <p class="meta">XXXXX</p>
+          <p class="meta">XXXXX</p>
+          <p class="meta">XXXXX</p>
+          <p class="meta">XXXXX</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div>© <span id="year"></span> The Towel Atelier · XXXXX</div>
+      <div class="links">
+        <a href="#">XXXXX</a>
+        <a href="#">XXXXX</a>
+        <a href="#">XXXXX</a>
+        <a href="#">XXXXX</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
