@@ -2,7 +2,7 @@
 
 :root {
   --bg: #fff9ef;
-  --paper: #ffffff;
+  --paper: #fff9ef;
   --ink: #000000;
   --subtle: #000000;
   --accent: #a88961;
@@ -61,11 +61,6 @@ header {
 /* Placeholder page structure */
 nav a { text-decoration: none; margin-left: 18px; font-family: 'Cormorant Garamond', serif; font-size: 18px; }
 nav a:hover { opacity: 0.8; }
-
-/* Replaceable sections */
-.hero h1::before, .lead::before, .section h2::before, .section .sub::before, p::before, .card-title h3::before, .price::before, label::before {
-  content: 'XXXXX';
-}
 
 /* Footer */
 footer { padding: 28px 0 60px; color: var(--ink); font-family: 'Cormorant Garamond', serif; }
