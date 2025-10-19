@@ -2,12 +2,12 @@
 
 :root {
   --bg: #fff9ef;
-  --paper: #fff9ef;
+  --paper: #ffffff;
   --ink: #000000;
   --subtle: #000000;
-  --accent: #fff9ef;
-  --accent-2: #fff9ef;
-  --line: #fff9ef;
+  --accent: #a88961;
+  --accent-2: #cdb89b;
+  --line: #e9e4dc;
   --ok: #2a7f62;
 }
 
@@ -28,12 +28,16 @@ h1, h2, h3, .logo {
 }
 
 .container { max-width: 1120px; margin-inline: auto; padding: 0 20px; }
+
 header {
-  position: sticky; top: 0; z-index: 50;
-  backdrop-filter: saturate(140%) blur(6px);
-  background: color-mix(in oklab, var(--bg), white 40%/0.7);
-  border-bottom: 1px solid var(--line);
+  position: static;
+  top: auto;
+  z-index: 1;
+  backdrop-filter: none;
+  background: var(--bg); /* #fff9ef */
+  border-bottom: none;   /* <- remove the line entirely */
 }
+
 .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
 .logo { font-size: 22px; font-weight: 600; font-family: 'Cormorant Garamond', serif; }
